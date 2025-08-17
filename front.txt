@@ -1,0 +1,141 @@
+AI Transaction Command Center: Frontend Architecture & User Experience
+1. Guiding Principles & Design Philosophy
+The frontend will be built with one person in mind: a busy real estate agent who is not tech-savvy. Every design and architectural decision serves the goal of making their life simpler, not more complicated.
+
+Clarity Over Clutter: The interface will be minimalist. We will show only what is necessary for the current task, avoiding distracting menus, icons, or features.
+
+One-Click Confidence: Key actions should feel powerful yet simple. The "magic moment" of creating a transaction must be intuitive and require minimal input.
+
+Guided Workflow: The application will guide the agent naturally from one step to the next. They should never feel lost or wonder what to do next.
+
+Mobile-First Responsive Design: Agents are often on the go. The application will be fully functional and easy to use on a phone, tablet, or desktop.
+
+2. The User Flow: An Agent's Journey
+This is the step-by-step path an agent will take through the MVP.
+
+Login & First View (The Main Dashboard):
+
+The agent logs in and lands on the Main Dashboard.
+
+This screen is a clean, high-level overview of all their active deals.
+
+Each deal is represented by a simple "card" showing the most critical info: Property Address, Client Name, and the Next Upcoming Deadline.
+
+The most prominent button on this screen is "Add New Deal".
+
+Creating a New Deal (The "Magic Moment"):
+
+The agent clicks "Add New Deal".
+
+A simple pop-up window (New Deal Modal) appears. It has only four fields:
+
+Client Name
+
+Client Email
+
+Property Address
+
+Sale Price
+
+A large, clear button says "Upload Signed Contract (PDF)".
+
+After uploading the PDF, the final button, "Create Transaction", becomes active.
+
+AI Processing (The 30-Second Wait):
+
+Upon clicking "Create Transaction," the modal closes, and the screen shows a simple, reassuring loading animation.
+
+Text on the screen says: "Our AI is analyzing your contract and building your command center. This will take about 30 seconds..." This manages expectations and reinforces the value of the AI.
+
+The Deal Dashboard (The Command Center):
+
+After processing, the agent is automatically taken to the Deal Dashboard for the new transaction. This is the command center for a single deal.
+
+The agent does not have to search for it; the app takes them there directly. This is a crucial part of the seamless experience.
+
+From here, they can see all the extracted information and manage the transaction.
+
+Returning and Managing:
+
+When the agent logs in next time, they will see their new deal on the Main Dashboard. Clicking on its card will take them directly to that specific Deal Dashboard.
+
+3. UI Component Breakdown
+This section details the key screens and components of the application.
+
+A. The Main Dashboard (DashboardView)
+Purpose: To provide a quick, at-a-glance overview of all ongoing transactions.
+
+Key UI Elements:
+
+Header: Displays the App Name and a clear "Add New Deal" button with a + icon.
+
+Deal List: A list of DealCard components.
+
+DealCard Component: Each card is a self-contained summary of one deal.
+
+Property Address (Large, bold text)
+
+Client Name
+
+Next Critical Date: Shows only the next upcoming deadline (e.g., "Inspection Due: Sept 15, 2024"). This creates a sense of urgency and focus.
+
+Status Badge: A colored tag (e.g., "Active", "Pending", "Closed").
+
+B. The New Deal Modal (NewDealModal)
+Purpose: To capture the initial information and contract with zero friction.
+
+Key UI Elements:
+
+Simple Form: Clean, well-spaced input fields for the four required pieces of information.
+
+File Uploader: A large, inviting area to drag-and-drop or click to upload the PDF. It will show the filename once a file is selected.
+
+Primary Action Button: The "Create Transaction" button is disabled until the form is filled and a file is uploaded, guiding the user to complete the required steps.
+
+C. The Deal Dashboard (DealDashboardView)
+Purpose: This is the agent's command center for a single deal. It presents all the AI-extracted information in a clear, actionable format.
+
+Key UI Elements:
+
+Header:
+
+A "Back to Dashboard" arrow icon/link.
+
+The Property Address and Client Name are displayed prominently as the page title.
+
+Critical Dates Component:
+
+This is the most important part of the page. It's a chronological list of all deadlines extracted by the AI.
+
+Each row contains:
+
+[ ] A Checkbox for the agent to manually "Mark as Complete".
+
+Deadline Name (e.g., "Loan Application").
+
+Due Date (e.g., "September 20, 2024").
+
+Key Information Panel: A simple section with two sub-components:
+
+Key Contacts: A list showing the client's name and email.
+
+Financials: Displays the Sale Price and Earnest Money amount.
+
+Documents Panel:
+
+A single, prominent button/link that says "Open Google Drive Folder". This provides direct access to the automatically created workspace.
+
+4. State Management & API Interaction (Simplified)
+State Management: We will use React's built-in tools (useState, useContext) to manage the application's data. Think of this as the app's short-term memory. It will hold the list of deals, the details of the currently selected deal, and whether the "New Deal" pop-up is open. This approach is simple and avoids unnecessary complexity for the MVP.
+
+API Interaction:
+
+On "Create Transaction" click: The frontend sends the uploaded PDF and form data to our backend.
+
+Backend Work: The backend sends the PDF to the Google Gemini API for analysis and uses the Google Drive API to create the folder structure.
+
+Data Return: The backend returns all the extracted dates, contact info, and the link to the new Google Drive folder.
+
+UI Update: The frontend receives this data and uses it to populate the Deal Dashboard before redirecting the user. The agent experiences this as a seamless transition from the loading screen to a fully built-out command center.
+
+This architecture directly supports the MVP's core principle: to attack the post-signature chaos by transforming a manual, multi-hour process into a simple, 30-second, AI-driven action.

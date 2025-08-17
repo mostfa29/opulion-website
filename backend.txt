@@ -1,0 +1,148 @@
+AI Transaction Command Center: Backend Architecture
+1. Guiding Principles & Philosophy
+The backend architecture is guided by the principles of simplicity, reliability, and scalability. For the MVP, we prioritize a lean and robust system that flawlessly executes the core "magic moment" workflow.
+
+Simplicity First: We will use a well-established, "boring" technology stack. This reduces development time, simplifies maintenance, and makes hiring easier. We are intentionally deferring complex components like asynchronous task queues until they are absolutely necessary.
+
+Reliability is Key: The core function of creating a transaction cannot fail. The architecture is designed to be a straightforward, single-process flow that is easy to debug and monitor.
+
+Stateless by Design: The backend API will be stateless. Each request from the frontend will contain all the information needed to be processed, which simplifies both development and future scaling.
+
+2. Core Technology Stack
+Framework: Django & Django REST Framework (DRF)
+
+Why: Django provides a "batteries-included" environment with a built-in Object-Relational Mapper (ORM), admin interface, and robust security features. DRF is the industry standard for building clean, powerful, and well-documented APIs with Django. This combination accelerates development significantly.
+
+Database: PostgreSQL
+
+Why: PostgreSQL is a highly reliable, feature-rich, and open-source relational database that works seamlessly with Django. It can handle the structured data of our application with ease and scales effectively for future needs.
+
+Core AI Service: Google Gemini API
+
+Why: This is the engine of our core feature. We will use the Gemini API specifically for its powerful document understanding capabilities to extract structured data (dates, names, financials) from the unstructured text of a PDF contract.
+
+Core Integration: Google Drive API
+
+Why: To deliver on the promise of an automated workspace, we will use the Google Drive API to programmatically create folders, set up subfolders, and manage sharing permissions with the client.
+
+Deployment: Docker & AWS Elastic Beanstalk / DigitalOcean
+
+Why: Docker allows us to package our application and its dependencies into a consistent, portable container. This eliminates "it works on my machine" problems. A platform like Elastic Beanstalk or DigitalOcean's App Platform simplifies deployment and management of the containerized application.
+
+3. Data Models (The Database Schema)
+This defines how we will store our information in the PostgreSQL database. Django's ORM will translate these models into database tables.
+
+User Model (Provided by Django)
+
+username, password, email, etc.
+
+Deal Model
+
+agent (Foreign Key to User): The agent who owns this deal.
+
+client_name (CharField)
+
+client_email (EmailField)
+
+property_address (CharField)
+
+sale_price (DecimalField)
+
+earnest_money (DecimalField, extracted by AI)
+
+status (CharField, e.g., "Active", "Closed")
+
+google_drive_url (URLField)
+
+contract_pdf (FileField): The original uploaded contract.
+
+created_at (DateTimeField, auto-added)
+
+CriticalDate Model
+
+deal (Foreign Key to Deal): The deal this date belongs to.
+
+name (CharField, e.g., "Inspection Contingency")
+
+due_date (DateField)
+
+is_completed (BooleanField, default: False)
+
+4. API Endpoints (The Contract with the Frontend)
+These are the specific URLs the frontend will communicate with.
+
+Authentication
+POST /api/auth/token/: Takes username and password, returns an access token.
+
+POST /api/auth/token/refresh/: Takes a refresh token, returns a new access token.
+
+Deals
+GET /api/deals/:
+
+Action: Retrieves a list of all deals for the logged-in agent.
+
+Returns: A list of Deal objects (summary view).
+
+POST /api/deals/:
+
+Action: The "Magic Moment" endpoint. Creates a new deal.
+
+Request Body: client_name, client_email, property_address, sale_price, and the contract.pdf file.
+
+Returns: The full, detailed Deal object, including the list of CriticalDate objects extracted by the AI.
+
+GET /api/deals/{id}/:
+
+Action: Retrieves the full details for a single deal.
+
+Returns: A single Deal object with all its related CriticalDate objects.
+
+Critical Dates
+PATCH /api/critical-dates/{id}/:
+
+Action: Updates a critical date. Used for marking a date as complete.
+
+Request Body: { "is_completed": true }
+
+Returns: The updated CriticalDate object.
+
+5. The "Magic Moment" Workflow (Backend Process)
+This is the step-by-step sequence of events on the backend after the agent clicks "Create Transaction". This will be a single, synchronous process for the MVP.
+
+Request Received: The POST /api/deals/ endpoint receives the form data and the PDF file.
+
+Initial Validation: The backend validates that all required fields are present.
+
+Start Database Transaction: The system begins a database transaction to ensure all steps succeed or none do, preventing partial data creation.
+
+Call Gemini API:
+
+The backend sends the PDF content to the Google Gemini API.
+
+The prompt will instruct the AI to act as a real estate transaction coordinator and extract all key dates, the earnest money amount, and other party information, returning the data in a structured JSON format.
+
+Call Google Drive API:
+
+While waiting for the AI, or immediately after, the backend authenticates with the Google Drive API.
+
+It creates a main folder (e.g., "123 Main St - Smith Purchase").
+
+It creates the standard subfolders (Contracts, Disclosures, etc.).
+
+It creates the Document Checklist Google Doc.
+
+It shares the main folder with the client_email provided.
+
+Process API Responses:
+
+The backend receives the structured JSON data from Gemini and the new folder URL from Google Drive.
+
+Save to Database:
+
+A new Deal object is created and saved to the database with all the information.
+
+The system loops through the dates returned by the AI, creating and saving a CriticalDate object for each one, linking it to the new Deal.
+
+Commit Database Transaction: The database transaction is completed, making all changes permanent.
+
+Send Response: The backend sends a 201 Created status code and the complete JSON representation of the new Deal and its CriticalDates back to the frontend.
