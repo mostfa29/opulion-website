@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X, ArrowRight, TrendingUp, DollarSign, Zap, Star, Users, Target, CheckCircle, Play } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowRight, TrendingUp, DollarSign, Zap, Star, Users, Target, CheckCircle, Play, Download } from 'lucide-react';
+import PortfolioScalingLeadMagnet from './Portfolio_lead_magnet';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  // MODIFICATION: Added 'leadMagnet' to the possible page states
   const [currentPage, setCurrentPage] = useState('home');
   const [scrollY, setScrollY] = useState(0);
 
@@ -132,6 +134,8 @@ const App = () => {
       </div>
     </div>
   );
+
+
 
   const ServicesPage = () => (
     <div className="min-h-screen bg-gray-50 pt-20">
@@ -387,7 +391,7 @@ const App = () => {
                   Schedule Strategy Call
                   <ArrowRight className="w-5 h-5" />
                 </Button>              </a>
-               
+                
               </div>
             </div>
             <div className="mt-12 lg:mt-0 relative">
@@ -526,19 +530,33 @@ const App = () => {
             The difference between businesses that plateau and businesses that scale is systems, capital, and the right partners.
           </p>
          <a
-                href="https://calendly.com/opulion/fit-call"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
- <Button variant="secondary" className="text-lg px-10 py-4">
+            href="https://calendly.com/opulion/fit-call"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+<Button variant="secondary" className="text-lg px-10 py-4">
             Schedule Your Strategy Call Today
             <ArrowRight className="w-5 h-5" />
           </Button>
-            </a>
+          </a>
         </div>
       </section>
     </div>
   );
+
+  // Helper function to render the current page
+  const renderCurrentPage = () => {
+    switch (currentPage) {
+        case 'home':
+            return <HomePage />;
+        case 'services':
+            return <ServicesPage />;
+        case 'leadMagnet':
+            return <PortfolioScalingLeadMagnet/>;
+        default:
+            return <HomePage />;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -557,7 +575,8 @@ const App = () => {
             
             <div className="hidden md:flex items-center space-x-8">
               <NavigationItem href="#services" onClick={() => setCurrentPage('services')}>Services</NavigationItem>
-              <NavigationItem href="#about">About</NavigationItem>
+              {/* MODIFICATION: Navigation link now points to the lead magnet page */}
+              <NavigationItem href="#" onClick={() => setCurrentPage('leadMagnet')}>Scale your portfolio</NavigationItem>
 
               <a
                 href="https://calendly.com/opulion/fit-call"
@@ -585,16 +604,16 @@ const App = () => {
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <NavigationItem href="#services" mobile onClick={() => setCurrentPage('services')}>Services</NavigationItem>
-              <NavigationItem href="#about" mobile>About</NavigationItem>
-              <NavigationItem href="#testimonials" mobile>Testimonials</NavigationItem>
-              <NavigationItem href="#faq" mobile>FAQ</NavigationItem>
+              {/* MODIFICATION: Mobile navigation link now points to the lead magnet page */}
+              <NavigationItem href="#" mobile onClick={() => setCurrentPage('leadMagnet')}>Scale your portfolio</NavigationItem>
+              <NavigationItem href="#testimonials" mobile onClick={() => setCurrentPage('home')}>Testimonials</NavigationItem>
               <div className="px-3 py-2">
                 <a
                 href="https://calendly.com/opulion/fit-call"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-               <Button className="w-full justify-center">Schedule Strategy Call</Button>
+              <Button className="w-full justify-center">Schedule Strategy Call</Button>
               </a>
               </div>
             </div>
@@ -602,15 +621,17 @@ const App = () => {
         )}
       </nav>
 
-      {/* Main Content */}
-      {currentPage === 'home' ? <HomePage /> : <ServicesPage />}
+      {/* MODIFICATION: Main Content rendering logic updated for multiple pages */}
+      <main>
+        {renderCurrentPage()}
+      </main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-40ighbors-400 bg-clip-text text-transparent mb-4">
                 Opulion
               </div>
               <p className="text-gray-400 mb-4">
@@ -633,8 +654,8 @@ const App = () => {
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage('home');}} className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage('home');}} className="hover:text-white transition-colors">Success Stories</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage('home');}} className="hover:text-white transition-colors">Home</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage('leadMagnet');}} className="hover:text-white transition-colors">Get Blueprint</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
