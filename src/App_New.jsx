@@ -469,140 +469,141 @@ const OpulionLandingPage = () => {
         </div>
       </section>
 
-      {/* Free Guide CTA */}
-      {/* <section id="download" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-[#4A63FF]/20 to-[#C33BFF]/20 backdrop-blur-sm border border-[#4A63FF]/30 rounded-3xl p-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Free Guide: The Institutional Blueprint to Break the $100M Barrier
-            </h2>
-            
-            <p className="text-xl text-gray-300 mb-8">
-              92% of successful investors never scale past $100M AUM. Not because they lack capital or track record, 
-              but because they're blind to the institutional frameworks that separate players from platforms.
-            </p>
+      <section id="newsletter" className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="bg-gradient-to-br from-[#4A63FF]/20 to-[#C33BFF]/20 backdrop-blur-sm border border-[#4A63FF]/30 rounded-3xl p-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            The Architecture Advantage
+          </h2>
+          
+          <p className="text-xl text-gray-300 mb-8">
+            Join 2,847+ high-net-worth individuals, fund managers, and syndicators who get exclusive insights into 
+            the institutional frameworks that separate $50M players from $500M platforms.
+          </p>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
-              <div>
-                <h4 className="text-lg font-semibold text-[#4A63FF] mb-4">Download our free guide and discover:</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                    The Architecture Gap keeping operators capped at $50M
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                    Capital Stack Surgery: Why you're using 2 tools when institutions use 7
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                    Deal Flow Domination systems institutions use to create opportunities
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                    The Identity Upgrade required to become a scalable allocator
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="text-lg font-semibold text-[#C33BFF] mb-4">What You'll Get:</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>Step-by-step breakdown of the 4 institutional pillars</li>
-                  <li>The psychology behind why you feel "small" despite success</li>
-                  <li>Data and case studies proving why traditional methods cap you</li>
-                  <li>The exact roadmap institutions follow to scale velocity</li>
-                </ul>
-              </div>
+          <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+            <div>
+              <h4 className="text-lg font-semibold text-[#4A63FF] mb-4">Weekly Deep Dives Include:</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                  Capital stack breakdowns institutions don't want you to see
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                  Deal sourcing systems that create opportunities instead of chasing them
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                  The psychology behind why successful investors plateau at $100M
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                  Real case studies from the $50M → $500M transformation
+                </li>
+              </ul>
             </div>
-
-            {!isSubmitted ? (
-              <form onSubmit={handleFormSubmit} className="max-w-lg mx-auto">
-                <div className="grid md:grid-cols-1 gap-4 mb-6">
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Your Full Name"
-                    className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
-                    required
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Your Email Address"
-                    className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
-                    required
-                  />
-                  <input
-                    type="url"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder="Your Company Website"
-                    className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
-                    required
-                  />
-                </div>
-                {submitMessage && (
-                  <div className="mb-4 text-center">
-                    <p className={`text-sm ${isSubmitted ? 'text-green-400' : 'text-red-400'}`}>
-                      {submitMessage}
-                    </p>
-                  </div>
-                )}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#4A63FF]/25 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    'Sending...'
-                  ) : (
-                    <>
-                      <Download className="mr-2" size={20} />
-                      Download the Free Blueprint
-                    </>
-                  )}
-                </button>
-                <p className="text-sm text-gray-400 mt-4">
-                  Bonus: Get priority access to our Strategy Call Calendar
-                </p>
-              </form>
-            ) : (
-              <div className="max-w-md mx-auto text-center">
-                <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-6 mb-6">
-                  <CheckCircle className="text-green-400 mx-auto mb-4" size={48} />
-                  <h3 className="text-xl font-bold text-green-400 mb-2">Success! Check Your Email</h3>
-                  <p className="text-gray-300">
-                    Your Institutional Blueprint is on its way. Check your inbox in the next few minutes.
-                  </p>
-                </div>
-                <button 
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setFormData({ name: '', email: '', company: '' });
-                    setSubmitMessage('');
-                  }}
-                  className="text-[#4A63FF] hover:underline"
-                >
-                  Download another copy?
-                </button>
-              </div>
-            )}
-
-            <div className="mt-8 p-6 bg-[#0A092B]/30 rounded-lg border border-orange-500/30">
-              <h4 className="text-lg font-semibold text-orange-400 mb-2">Why Now</h4>
-              <p className="text-gray-300">
-                The $2T debt wall, shifting capital markets, and accelerated institutional consolidation mean the next 24 months are either your window to scale — or your sentence to stagnation.
-              </p>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-[#C33BFF] mb-4">Subscriber-Only Access:</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>Monthly "Architecture Teardown" of institutional deals</li>
+                <li>Early access to capital structure templates and frameworks</li>
+                <li>Private community of scaling capital allocators</li>
+                <li>Priority invitations to exclusive strategy sessions</li>
+              </ul>
             </div>
           </div>
+
+          {!isSubmitted ? (
+            <div className="max-w-lg mx-auto">
+              <div className="grid md:grid-cols-1 gap-4 mb-6">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Your Full Name"
+                  className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Your Email Address"
+                  className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
+                  required
+                />
+                <input
+                  type="url"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  placeholder="Your Company Website (Optional)"
+                  className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
+                />
+              </div>
+              {submitMessage && (
+                <div className="mb-4 text-center">
+                  <p className={`text-sm ${isSubmitted ? 'text-green-400' : 'text-red-400'}`}>
+                    {submitMessage}
+                  </p>
+                </div>
+              )}
+              <button
+                onClick={handleFormSubmit}
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#4A63FF]/25 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  'Joining...'
+                ) : (
+                  <>
+                    <Mail className="mr-2" size={20} />
+                    Join The Architecture Advantage
+                    <ArrowRight className="ml-2" size={20} />
+                  </>
+                )}
+              </button>
+              <p className="text-sm text-gray-400 mt-4">
+                No spam. Unsubscribe anytime. Join the 8% who break the $100M barrier.
+              </p>
+            </div>
+          ) : (
+            <div className="max-w-md mx-auto text-center">
+              <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-6 mb-6">
+                <CheckCircle className="text-green-400 mx-auto mb-4" size={48} />
+                <h3 className="text-xl font-bold text-green-400 mb-2">Welcome to the Inner Circle!</h3>
+                <p className="text-gray-300">
+                  You're now part of an exclusive community of capital allocators breaking through the $100M ceiling. 
+                  Your first architectural deep dive arrives Thursday.
+                </p>
+              </div>
+              <button 
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setFormData({ name: '', email: '', company: '' });
+                  setSubmitMessage('');
+                }}
+                className="text-[#4A63FF] hover:underline"
+              >
+                Subscribe another email?
+              </button>
+            </div>
+          )}
+
+          <div className="mt-8 p-6 bg-[#0A092B]/30 rounded-lg border border-orange-500/30">
+            <h4 className="text-lg font-semibold text-orange-400 mb-2">Why Join Now</h4>
+            <p className="text-gray-300">
+              The $2T debt wall, institutional consolidation, and capital market shifts are creating a 24-month window. 
+              Those who upgrade their architecture now will dominate. Those who don't will stagnate.
+            </p>
+          </div>
         </div>
-      </section> */}
+      </div>
+    </section>
 
       {/* Strategy Call Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0A092B] to-[#1A1B4B]">
