@@ -110,6 +110,9 @@ const OpulionLandingPage = () => {
               <a href="#services" className="hover:text-[#4A63FF] transition-colors">Services</a>
               <a href="#track-record" className="hover:text-[#4A63FF] transition-colors">Track Record</a>
               <a href="#testimonials" className="hover:text-[#4A63FF] transition-colors">Testimonials</a>
+              <a href="#newsletter" className="hover:text-[#4A63FF] transition-colors">Newsletter</a>
+
+      
             </nav>
 
             {/* CTA Button */}
@@ -511,7 +514,7 @@ const OpulionLandingPage = () => {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                    Real case studies from $20M → $200M transformations
+                    Real case studies from $5M → $75M transformations
                   </li>
                 </ul>
               </div>
