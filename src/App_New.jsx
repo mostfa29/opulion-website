@@ -594,7 +594,7 @@ const OpulionLandingPage = () => {
                   <h3 className="text-xl font-bold text-green-400 mb-2">Welcome to the Inner Circle!</h3>
                   <p className="text-gray-300">
                     You're now part of an exclusive community of operators breaking through the $75M ceiling. 
-                    Your first institutional architecture breakdown arrives Thursday.
+                    Your first institutional architecture breakdown arrives Today.
                   </p>
                 </div>
                 <button 
