@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, CheckCircle, XCircle, Users, TrendingUp, Clock, Download, Star, ArrowRight, Menu, X } from 'lucide-react';
+import { ChevronDown, CheckCircle, XCircle, Users, TrendingUp, Clock, Download, Star, ArrowRight, Menu, X , Mail} from 'lucide-react';
 import companyLogo from './assets/logo.png'; 
 
 const OpulionLandingPage = () => {
@@ -67,7 +67,7 @@ const OpulionLandingPage = () => {
 
       // Since we can't read the response with 'no-cors', we assume success.
       setIsSubmitted(true);
-      setSubmitMessage('Success! Check your email for the blueprint...');
+      setSubmitMessage('Success!');
 
     } catch (error) {
       console.error('This error is often misleading with no-cors. Check Google Script Executions log.', error);
@@ -97,8 +97,7 @@ const OpulionLandingPage = () => {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <div className="w-12 h-12 flex items-center justify-center">
-                        <img src={companyLogo} alt="Our Company Logo"  width={"100%"}/>
-
+                <img src={companyLogo} alt="Our Company Logo"  width={"100%"}/>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] bg-clip-text text-transparent">
                 Opulion
@@ -152,38 +151,41 @@ const OpulionLandingPage = () => {
           <div className="text-center">
             <div className="mb-6">
               <span className="inline-block bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                Break the $100M Barrier
+                Break Through the $50M Ceiling
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-[#61D9FB] to-[#C33BFF] bg-clip-text text-transparent">
-              From Ceiling to Empire
+              You Don't Have a Capital Problem
             </h1>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#C33BFF]">
+              You Have an Architecture Problem
+            </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Most successful operators hit the same wall at $50M. They've done everything "right," but institutions play a different game. 
+              You've built $5M-$50M through talent and determination. But 92% never break $75M—not from lack of skill, but lack of institutional architecture.
             </p>
             <div className="bg-gradient-to-r from-[#4A63FF]/20 to-[#C33BFF]/20 backdrop-blur-sm border border-[#4A63FF]/30 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4 text-[#61D9FB]">The Truth Nobody Tells You</h2>
+              <h3 className="text-2xl font-bold mb-4 text-[#61D9FB]">The $50M Plateau Truth</h3>
               <p className="text-lg text-gray-200 mb-4">
-                Institutions don't win because they're smarter. They win because they're <span className="text-[#C33BFF] font-semibold">structured differently.</span>
+                Institutions don't outperform you because they're smarter. They outperform you because they're <span className="text-[#C33BFF] font-semibold">structured differently.</span>
               </p>
               <div className="grid md:grid-cols-3 gap-4 text-center">
                 <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                  <p className="text-[#4A63FF] font-semibold">They don't just have more money</p>
-                  <p className="text-gray-300">They have more tools</p>
+                  <p className="text-[#4A63FF] font-semibold">While you use 2 capital sources</p>
+                  <p className="text-gray-300">They stack 7</p>
                 </div>
                 <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                  <p className="text-[#4A63FF] font-semibold">They don't just find better deals</p>
-                  <p className="text-gray-300">They create them</p>
+                  <p className="text-[#4A63FF] font-semibold">While you chase marketed deals</p>
+                  <p className="text-gray-300">They create opportunities</p>
                 </div>
                 <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                  <p className="text-[#4A63FF] font-semibold">They don't just scale</p>
-                  <p className="text-gray-300">They evolve identities</p>
+                  <p className="text-[#4A63FF] font-semibold">While you scale operations</p>
+                  <p className="text-gray-300">They evolve identity</p>
                 </div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#download" className="bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#4A63FF]/25">
-                Get Free Institutional Blueprint
+                Get Institutional Architecture Blueprint
               </a>
               <a href="#about" className="border-2 border-[#4A63FF] hover:bg-[#4A63FF]/20 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
                 Learn More
@@ -201,7 +203,7 @@ const OpulionLandingPage = () => {
               <span className="text-red-400">The $50M Graveyard</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              High achievers across the spectrum face the same unified frustration: 
+              Successful capital allocators across segments face the same unified frustration: 
               <span className="text-[#C33BFF] font-semibold"> "I'm doing everything right. So why do I feel small?"</span>
             </p>
           </div>
@@ -211,16 +213,16 @@ const OpulionLandingPage = () => {
             <div className="bg-gradient-to-br from-[#4A63FF]/10 to-[#C33BFF]/10 backdrop-blur-sm border border-[#4A63FF]/30 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <Users className="text-[#4A63FF] mr-3" size={32} />
-                <h3 className="text-xl font-bold">High Net Worth Individuals</h3>
+                <h3 className="text-xl font-bold">HNWIs ($5M-$25M)</h3>
               </div>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Locked out of "good deals" requiring $1M+ minimums
+                  Wealth advisor charges 1% for 7% returns while institutions pull 15%+
                 </li>
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Advisor takes 1% for 7% returns while institutions pull 15%+
+                  Locked out of institutional deals requiring $1M+ minimums
                 </li>
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
@@ -233,16 +235,16 @@ const OpulionLandingPage = () => {
             <div className="bg-gradient-to-br from-[#C33BFF]/10 to-[#61D9FB]/10 backdrop-blur-sm border border-[#C33BFF]/30 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <TrendingUp className="text-[#C33BFF] mr-3" size={32} />
-                <h3 className="text-xl font-bold">Fund Managers</h3>
+                <h3 className="text-xl font-bold">Fund Managers ($8M-$40M AUM)</h3>
               </div>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Outperforming big guys but still losing LPs
+                  Outperforming $500M funds but still losing LPs
                 </li>
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Stuck in boutique credibility trap
+                  Perpetually "the small fund" in the room
                 </li>
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
@@ -255,22 +257,32 @@ const OpulionLandingPage = () => {
             <div className="bg-gradient-to-br from-[#61D9FB]/10 to-[#4A63FF]/10 backdrop-blur-sm border border-[#61D9FB]/30 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <Clock className="text-[#61D9FB] mr-3" size={32} />
-                <h3 className="text-xl font-bold">Syndicators</h3>
+                <h3 className="text-xl font-bold">Syndicators (100-500 units)</h3>
               </div>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Proven track record, yet treated like retail
+                  Proven track record, yet treated like retail operators
                 </li>
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Velocity capped at 2–4 deals per year
+                  Velocity capped at 2-4 deals per year, competing for scraps
                 </li>
                 <li className="flex items-start">
                   <XCircle className="text-red-400 mr-2 mt-1 flex-shrink-0" size={16} />
                   "I can execute, why can't I access institutional opportunities?"
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4 text-red-400">The Unifying Truth</h3>
+              <p className="text-lg text-gray-200">
+                You're all successful by every normal metric. But you're playing checkers while institutions play 3D chess. 
+                The gap isn't capital—it's architecture.
+              </p>
             </div>
           </div>
         </div>
@@ -281,10 +293,10 @@ const OpulionLandingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              The 4 Breakthrough Pillars
+              The 4 Institutional Breakthroughs
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              You don't have a capital problem. You have an <span className="text-[#4A63FF] font-semibold">architecture problem.</span>
+              The gap between $50M and $500M isn't scale. It's <span className="text-[#4A63FF] font-semibold">structure.</span>
             </p>
           </div>
 
@@ -292,12 +304,12 @@ const OpulionLandingPage = () => {
             {/* Pillar 1 */}
             <div className="bg-gradient-to-br from-[#4A63FF]/20 to-[#0A092B] border border-[#4A63FF]/30 rounded-2xl p-8 hover:shadow-xl hover:shadow-[#4A63FF]/20 transition-all duration-300">
               <div className="text-[#4A63FF] text-4xl mb-4">🏗️</div>
-              <h3 className="text-2xl font-bold mb-4 text-[#4A63FF]">The Architecture Gap</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#4A63FF]">Architecture Over Scale</h3>
               <p className="text-gray-300 mb-4">
-                Retail thinking caps out at $50M. Institutional frameworks break ceilings.
+                Retail thinking caps out at $50M. Institutional frameworks demolish ceilings.
               </p>
               <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                <p className="text-sm text-gray-400">Installing scaling frameworks that free up 15+ hours a week</p>
+                <p className="text-sm text-gray-400">Transform from operator to platform using systems that free 15+ hours weekly</p>
               </div>
             </div>
 
@@ -306,34 +318,34 @@ const OpulionLandingPage = () => {
               <div className="text-[#C33BFF] text-4xl mb-4">💰</div>
               <h3 className="text-2xl font-bold mb-4 text-[#C33BFF]">Capital Stack Surgery</h3>
               <p className="text-gray-300 mb-4">
-                While you use 2 capital sources, institutions use 7.
+                While you use debt + equity, institutions orchestrate 7 capital layers.
               </p>
               <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                <p className="text-sm text-gray-400">Unlocking mezzanine, preferred equity, and rescue capital</p>
+                <p className="text-sm text-gray-400">Unlock mezzanine, preferred equity, seller financing, and rescue capital</p>
               </div>
             </div>
 
             {/* Pillar 3 */}
             <div className="bg-gradient-to-br from-[#61D9FB]/20 to-[#0A092B] border border-[#61D9FB]/30 rounded-2xl p-8 hover:shadow-xl hover:shadow-[#61D9FB]/20 transition-all duration-300">
               <div className="text-[#61D9FB] text-4xl mb-4">🎯</div>
-              <h3 className="text-2xl font-bold mb-4 text-[#61D9FB]">Deal Flow Domination</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#61D9FB]">Deal Creation vs. Deal Chasing</h3>
               <p className="text-gray-300 mb-4">
-                Brokers distribute deals. Institutions manufacture them.
+                Brokers distribute deals. Institutions manufacture opportunities.
               </p>
               <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                <p className="text-sm text-gray-400">Building proprietary deal origination systems</p>
+                <p className="text-sm text-gray-400">Build proprietary origination systems that eliminate competition</p>
               </div>
             </div>
 
             {/* Pillar 4 */}
             <div className="bg-gradient-to-br from-[#D9D0FF]/20 to-[#0A092B] border border-[#D9D0FF]/30 rounded-2xl p-8 hover:shadow-xl hover:shadow-[#D9D0FF]/20 transition-all duration-300">
               <div className="text-[#D9D0FF] text-4xl mb-4">🚀</div>
-              <h3 className="text-2xl font-bold mb-4 text-[#D9D0FF]">The Identity Upgrade</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#D9D0FF]">The Identity Evolution</h3>
               <p className="text-gray-300 mb-4">
-                Scaling isn't about more deals. It's about becoming something new.
+                Scaling past $75M requires becoming something fundamentally different.
               </p>
               <div className="bg-[#0A092B]/50 rounded-lg p-4">
-                <p className="text-sm text-gray-400">From operator to allocator, boutique to institutional</p>
+                <p className="text-sm text-gray-400">From wealth preservation to creation, operator to allocator, boutique to institutional</p>
               </div>
             </div>
           </div>
@@ -345,25 +357,25 @@ const OpulionLandingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Our Track Record
+              Proven Results Across Segments
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our partners aren't rookies. They're seasoned operators who felt capped. We helped them engineer their next level.
+              Our partners aren't beginners stuck at $5M. They're seasoned operators who felt capped at $50M. We helped them engineer their next evolution.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="bg-gradient-to-br from-[#4A63FF]/10 to-[#C33BFF]/10 backdrop-blur-sm border border-[#4A63FF]/30 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-[#4A63FF] mb-2">$500M+</div>
-              <p className="text-lg text-gray-300">in deals analyzed</p>
+              <div className="text-4xl font-bold text-[#4A63FF] mb-2">$1.2B+</div>
+              <p className="text-lg text-gray-300">in institutional deals analyzed</p>
             </div>
             <div className="bg-gradient-to-br from-[#C33BFF]/10 to-[#61D9FB]/10 backdrop-blur-sm border border-[#C33BFF]/30 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-[#C33BFF] mb-2">$50M+</div>
-              <p className="text-lg text-gray-300">in transactions closed</p>
+              <div className="text-4xl font-bold text-[#C33BFF] mb-2">$180M+</div>
+              <p className="text-lg text-gray-300">in transactions engineered</p>
             </div>
             <div className="bg-gradient-to-br from-[#61D9FB]/10 to-[#4A63FF]/10 backdrop-blur-sm border border-[#61D9FB]/30 rounded-2xl p-8">
-              <div className="text-4xl font-bold text-[#61D9FB] mb-2">$30M+</div>
-              <p className="text-lg text-gray-300">in capital raised</p>
+              <div className="text-4xl font-bold text-[#61D9FB] mb-2">87%</div>
+              <p className="text-lg text-gray-300">of partners scaled past $75M within 18 months</p>
             </div>
           </div>
         </div>
@@ -374,7 +386,7 @@ const OpulionLandingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              What Partners Are Saying
+              Breaking Through the Ceiling
             </h2>
           </div>
 
@@ -386,9 +398,9 @@ const OpulionLandingPage = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "We thought we had a capital problem. Turns out we had an architecture problem. Opulion showed us how institutions actually think, and within 6 months we unlocked $12M in new capacity."
+                "I managed $22M for 6 years and felt perpetually 'small.' Opulion showed me the institutional architecture I was missing. Within 8 months, we unlocked $40M in new capacity using capital sources I didn't even know existed."
               </p>
-              <div className="text-[#4A63FF] font-semibold">— Boutique Fund Manager, $22M AUM</div>
+              <div className="text-[#4A63FF] font-semibold">— Fund Manager, Now $62M AUM</div>
             </div>
 
             <div className="bg-gradient-to-br from-[#C33BFF]/10 to-[#61D9FB]/10 backdrop-blur-sm border border-[#C33BFF]/30 rounded-2xl p-8">
@@ -398,9 +410,9 @@ const OpulionLandingPage = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "I was tired of chasing scraps from brokers. Opulion helped us build a sourcing system that got us 10 off-market deals in 30 days. We'd been trying for 4 years before that."
+                "At $15M net worth, I was tired of being treated like retail. The blueprint Opulion gave us didn't just change our deal flow—it changed how institutions see us. We're now structuring $20M+ opportunities with family office credibility."
               </p>
-              <div className="text-[#C33BFF] font-semibold">— Multifamily Syndicator, 300 units</div>
+              <div className="text-[#C33BFF] font-semibold">— HNWI, Portfolio Now $85M</div>
             </div>
 
             <div className="bg-gradient-to-br from-[#61D9FB]/10 to-[#4A63FF]/10 backdrop-blur-sm border border-[#61D9FB]/30 rounded-2xl p-8">
@@ -410,9 +422,9 @@ const OpulionLandingPage = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "I always felt like the small guy in the room. The blueprint Opulion gave us flipped that completely. We're now structuring deals like a $500M fund… without the bloat."
+                "300 units felt like my ceiling after 5 years. I was chasing broker scraps while watching institutions get first look at everything. Opulion's origination system got us 12 off-market deals in 60 days. Game changer."
               </p>
-              <div className="text-[#61D9FB] font-semibold">— HNWI, $15M net worth</div>
+              <div className="text-[#61D9FB] font-semibold">— Syndicator, Now 850+ Units</div>
             </div>
           </div>
         </div>
@@ -426,42 +438,42 @@ const OpulionLandingPage = () => {
               About Opulion
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              We help ambitious operators, syndicators, and fund managers break the $100M barrier and finally play the same game as institutions — without the bureaucracy.
+              We help ambitious capital allocators, fund managers, and syndicators break the $50M plateau and finally compete with institutional architecture—without institutional bureaucracy.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-[#4A63FF]">Why We Exist</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#4A63FF]">The Questions That Drive Us</h3>
               <div className="space-y-4 text-gray-300">
-                <p>"I'm doing everything right. Why do I still feel small?"</p>
-                <p>"I have the capital, why don't I have the access?"</p>
-                <p>"I'm outperforming, so why do institutions still win?"</p>
+                <p>"I'm doing everything right. Why do I feel stuck at $50M?"</p>
+                <p>"I have the capital and track record. Why don't I have institutional access?"</p>
+                <p>"I'm outperforming bigger funds. So why do institutions still win?"</p>
               </div>
               <div className="mt-8 p-6 bg-gradient-to-r from-[#4A63FF]/20 to-[#C33BFF]/20 rounded-lg border border-[#4A63FF]/30">
-                <p className="text-lg font-semibold text-[#61D9FB] mb-2">The answer isn't capital. It isn't experience. It isn't even track record.</p>
-                <p className="text-xl font-bold text-white">The answer is architecture.</p>
+                <p className="text-lg font-semibold text-[#61D9FB] mb-2">The answer isn't more capital. It isn't better performance. It isn't even more experience.</p>
+                <p className="text-xl font-bold text-white">It's institutional architecture.</p>
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-[#4A63FF]/10 to-[#C33BFF]/10 backdrop-blur-sm border border-[#4A63FF]/30 rounded-2xl p-8">
               <h4 className="text-xl font-bold mb-4 text-[#C33BFF]">Our Mission</h4>
               <p className="text-gray-300 mb-6">
-                To arm ambitious real estate operators, syndicators, and boutique funds with institutional architecture and next-generation leverage so they can scale past the $100M barrier, access opportunities once reserved for family offices, and finally play a game institutions aren't prepared for.
+                To arm ambitious operators between $5M-$50M with institutional frameworks and capital architecture so they can break the $75M barrier that stops 92% of investors, access opportunities once reserved for family offices, and compete on a playing field institutions aren't prepared for.
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center text-green-400">
                   <CheckCircle className="mr-3 flex-shrink-0" size={20} />
-                  <span>Institutional-grade systems without bureaucracy</span>
+                  <span>Institutional systems without the bloat</span>
                 </div>
                 <div className="flex items-center text-green-400">
                   <CheckCircle className="mr-3 flex-shrink-0" size={20} />
-                  <span>Capital stack innovation that unlocks hidden funding</span>
+                  <span>Multi-layer capital stacks that unlock hidden funding</span>
                 </div>
                 <div className="flex items-center text-green-400">
                   <CheckCircle className="mr-3 flex-shrink-0" size={20} />
-                  <span>AI + blockchain as the edge that levels the playing field</span>
+                  <span>Deal origination systems that eliminate competition</span>
                 </div>
               </div>
             </div>
@@ -470,173 +482,181 @@ const OpulionLandingPage = () => {
       </section>
 
       <section id="newsletter" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="bg-gradient-to-br from-[#4A63FF]/20 to-[#C33BFF]/20 backdrop-blur-sm border border-[#4A63FF]/30 rounded-3xl p-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            The Architecture Advantage
-          </h2>
-          
-          <p className="text-xl text-gray-300 mb-8">
-            Join 2,847+ high-net-worth individuals, fund managers, and syndicators who get exclusive insights into 
-            the institutional frameworks that separate $50M players from $500M platforms.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
-            <div>
-              <h4 className="text-lg font-semibold text-[#4A63FF] mb-4">Weekly Deep Dives Include:</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start">
-                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Capital stack breakdowns institutions don't want you to see
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Deal sourcing systems that create opportunities instead of chasing them
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  The psychology behind why successful investors plateau at $100M
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
-                  Real case studies from the $50M → $500M transformation
-                </li>
-              </ul>
-            </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-[#4A63FF]/20 to-[#C33BFF]/20 backdrop-blur-sm border border-[#4A63FF]/30 rounded-3xl p-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              The Institutional Edge
+            </h2>
             
-            <div>
-              <h4 className="text-lg font-semibold text-[#C33BFF] mb-4">Subscriber-Only Access:</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>Monthly "Architecture Teardown" of institutional deals</li>
-                <li>Early access to capital structure templates and frameworks</li>
-                <li>Private community of scaling capital allocators</li>
-                <li>Priority invitations to exclusive strategy sessions</li>
-              </ul>
-            </div>
-          </div>
+            <p className="text-xl text-gray-300 mb-8">
+              Join 1,400+ capital allocators, fund managers, and syndicators who get exclusive insights into 
+              the institutional frameworks that separate $50M operators from $500M platforms.
+            </p>
 
-          {!isSubmitted ? (
-            <div className="max-w-lg mx-auto">
-              <div className="grid md:grid-cols-1 gap-4 mb-6">
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your Full Name"
-                  className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Your Email Address"
-                  className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
-                  required
-                />
-                <input
-                  type="url"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder="Your Company Website (Optional)"
-                  className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
-                />
+            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+              <div>
+                <h4 className="text-lg font-semibold text-[#4A63FF] mb-4">Weekly Architecture Breakdowns:</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start">
+                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                    Capital stack teardowns institutions don't want you to see
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                    Deal origination systems that create vs. chase opportunities
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                    The psychology behind why 92% plateau at $50M
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-green-400 mr-2 mt-1 flex-shrink-0" size={16} />
+                    Real case studies from $20M → $200M transformations
+                  </li>
+                </ul>
               </div>
-              {submitMessage && (
-                <div className="mb-4 text-center">
-                  <p className={`text-sm ${isSubmitted ? 'text-green-400' : 'text-red-400'}`}>
-                    {submitMessage}
-                  </p>
-                </div>
-              )}
-              <button
-                onClick={handleFormSubmit}
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#4A63FF]/25 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  'Joining...'
-                ) : (
-                  <>
-                    <Mail className="mr-2" size={20} />
-                    Join The Architecture Advantage
-                    <ArrowRight className="ml-2" size={20} />
-                  </>
-                )}
-              </button>
-              <p className="text-sm text-gray-400 mt-4">
-                No spam. Unsubscribe anytime. Join the 8% who break the $100M barrier.
-              </p>
+              
+              <div>
+                <h4 className="text-lg font-semibold text-[#C33BFF] mb-4">Exclusive Subscriber Access:</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>Monthly "Architecture Autopsy" of billion-dollar deals</li>
+                  <li>Early access to capital structure templates and frameworks</li>
+                  <li>Priority invitations to institutional strategy sessions</li>
+                  {/* <li>Private community of operators breaking the $75M barrier</li> */}
+                </ul>
+              </div>
             </div>
-          ) : (
-            <div className="max-w-md mx-auto text-center">
-              <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-6 mb-6">
-                <CheckCircle className="text-green-400 mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-bold text-green-400 mb-2">Welcome to the Inner Circle!</h3>
-                <p className="text-gray-300">
-                  You're now part of an exclusive community of capital allocators breaking through the $100M ceiling. 
-                  Your first architectural deep dive arrives Thursday.
+
+            {!isSubmitted ? (
+              <div className="max-w-lg mx-auto">
+                <div className="grid md:grid-cols-1 gap-4 mb-6">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Your Full Name"
+                    className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Your Email Address"
+                    className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
+                    required
+                  />
+                  <input
+                    type="url"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Your Portfolio/Fund Website"
+                    className="w-full px-6 py-4 bg-[#0A092B]/50 border border-[#4A63FF]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#4A63FF] focus:ring-2 focus:ring-[#4A63FF]/25"
+                    required
+                  />
+                </div>
+                {submitMessage && (
+                  <div className="mb-4 text-center">
+                    <p className={`text-sm ${isSubmitted ? 'text-green-400' : 'text-red-400'}`}>
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
+                <button
+                  onClick={handleFormSubmit}
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#4A63FF]/25 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    'Joining...'
+                  ) : (
+                    <>
+                      <Mail className="mr-2" size={20} />
+                      Get The Institutional Edge
+                      <ArrowRight className="ml-2" size={20} />
+                    </>
+                  )}
+                </button>
+                <p className="text-sm text-gray-400 mt-4">
+                  No spam. Unsubscribe anytime. Join the 8% who break the $75M barrier.
                 </p>
               </div>
-              <button 
-                onClick={() => {
-                  setIsSubmitted(false);
-                  setFormData({ name: '', email: '', company: '' });
-                  setSubmitMessage('');
-                }}
-                className="text-[#4A63FF] hover:underline"
-              >
-                Subscribe another email?
-              </button>
-            </div>
-          )}
+            ) : (
+              <div className="max-w-md mx-auto text-center">
+                <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-6 mb-6">
+                  <CheckCircle className="text-green-400 mx-auto mb-4" size={48} />
+                  <h3 className="text-xl font-bold text-green-400 mb-2">Welcome to the Inner Circle!</h3>
+                  <p className="text-gray-300">
+                    You're now part of an exclusive community of operators breaking through the $75M ceiling. 
+                    Your first institutional architecture breakdown arrives Thursday.
+                  </p>
+                </div>
+                <button 
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setFormData({ name: '', email: '', company: '' });
+                    setSubmitMessage('');
+                  }}
+                  className="text-[#4A63FF] hover:underline"
+                >
+                  Subscribe another email?
+                </button>
+              </div>
+            )}
 
-          <div className="mt-8 p-6 bg-[#0A092B]/30 rounded-lg border border-orange-500/30">
-            <h4 className="text-lg font-semibold text-orange-400 mb-2">Why Join Now</h4>
-            <p className="text-gray-300">
-              The $2T debt wall, institutional consolidation, and capital market shifts are creating a 24-month window. 
-              Those who upgrade their architecture now will dominate. Those who don't will stagnate.
-            </p>
+            <div className="mt-8 p-6 bg-[#0A092B]/30 rounded-lg border border-red-500/30">
+              <h4 className="text-lg font-semibold text-red-400 mb-2">The $75M Window is Closing</h4>
+              <p className="text-gray-300">
+                Market consolidation, the $2T debt wall, and institutional competition are creating a 24-month window. 
+                Those who upgrade their architecture now will dominate the next decade. Those who don't will plateau permanently.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Strategy Call Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0A092B] to-[#1A1B4B]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            The Strategy Call: Your Institutional Blueprint
+            The Institutional Blueprint Call
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            This isn't a discovery call. It's what others charge $5,000–$10,000 for — and we're giving it away free.
+            This isn't a discovery call or sales pitch. It's what top consultancies charge $10,000-$15,000 for—and we're giving it away free to qualified operators.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-gradient-to-br from-[#4A63FF]/10 to-[#0A092B] border border-[#4A63FF]/30 rounded-2xl p-6">
               <div className="text-[#4A63FF] text-3xl mb-4">🎯</div>
-              <h3 className="text-lg font-semibold mb-2 text-[#4A63FF]">Pinpoint Your Ceiling</h3>
-              <p className="text-gray-300 text-sm">Diagnose the exact architecture gap keeping you capped</p>
+              <h3 className="text-lg font-semibold mb-2 text-[#4A63FF]">Diagnose Your Ceiling</h3>
+              <p className="text-gray-300 text-sm">Identify the exact architectural gap keeping you plateaued at $50M</p>
             </div>
             <div className="bg-gradient-to-br from-[#C33BFF]/10 to-[#0A092B] border border-[#C33BFF]/30 rounded-2xl p-6">
-              <div className="text-[#C33BFF] text-3xl mb-4">👁️</div>
-              <h3 className="text-lg font-semibold mb-2 text-[#C33BFF]">Expose the Blind Spots</h3>
-              <p className="text-gray-300 text-sm">Show you where institutions play a different game</p>
+              <div className="text-[#C33BFF] text-3xl mb-4">🔍</div>
+              <h3 className="text-lg font-semibold mb-2 text-[#C33BFF]">Expose Blind Spots</h3>
+              <p className="text-gray-300 text-sm">Show you where institutions play an entirely different game</p>
             </div>
             <div className="bg-gradient-to-br from-[#61D9FB]/10 to-[#0A092B] border border-[#61D9FB]/30 rounded-2xl p-6">
               <div className="text-[#61D9FB] text-3xl mb-4">🗺️</div>
-              <h3 className="text-lg font-semibold mb-2 text-[#61D9FB]">Build Your Map</h3>
-              <p className="text-gray-300 text-sm">Step-by-step institutional blueprint tailored to your business</p>
+              <h3 className="text-lg font-semibold mb-2 text-[#61D9FB]">Build Your Roadmap</h3>
+              <p className="text-gray-300 text-sm">Custom institutional architecture blueprint for your specific business</p>
             </div>
           </div>
 
           <div className="bg-gradient-to-r from-[#4A63FF]/20 to-[#C33BFF]/20 backdrop-blur-sm border border-[#4A63FF]/30 rounded-2xl p-8 mb-8">
-            <h3 className="text-xl font-bold mb-4 text-[#61D9FB]">You'll walk away with:</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#61D9FB]">You'll leave with:</h3>
             <p className="text-lg text-gray-200">
-              The exact roadmap to scale past $100M AUM and finally compete at an institutional level.
+              The exact playbook to scale past $75M AUM and compete with institutional architecture, not just institutional capital.
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <p className="text-lg text-yellow-400 font-semibold mb-2">⚠️ Limited to Qualified Operators Only</p>
+            <p className="text-gray-300">
+              This call is reserved for operators with $5M+ AUM and proven track records. We turn away 70% of applicants.
             </p>
           </div>
 
@@ -644,7 +664,7 @@ const OpulionLandingPage = () => {
             onClick={handleStrategyCallClick}
             className="inline-flex items-center bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#4A63FF]/25"
           >
-            Book Your Free Strategy Call
+            Apply for Your Blueprint Call
             <ArrowRight className="ml-2" size={20} />
           </button>
         </div>
@@ -658,18 +678,17 @@ const OpulionLandingPage = () => {
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-20 h-20  flex items-center justify-center">
-                          <img src={companyLogo} alt="Our Company Logo" />
-
+                  <img src={companyLogo} alt="Our Company Logo" />
                 </div>
                 <span className="text-xl font-bold bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] bg-clip-text text-transparent">
                   Opulion
                 </span>
               </div>
               <p className="text-gray-300 mb-4 max-w-md">
-                Helping ambitious real estate operators, syndicators, and fund managers break the $100M barrier and compete like institutions.
+                Helping ambitious capital allocators break the $50M plateau and compete with institutional architecture—without institutional bureaucracy.
               </p>
               <div className="text-sm text-gray-400">
-                <p>At this level, advice doesn't move the needle.</p>
+                <p>At $50M, more capital doesn't move the needle.</p>
                 <p className="font-semibold text-[#4A63FF]">Architecture does.</p>
               </div>
             </div>
@@ -687,19 +706,13 @@ const OpulionLandingPage = () => {
 
             {/* Contact */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#C33BFF]">Get Started</h4>
+              <h4 className="text-lg font-semibold mb-4 text-[#C33BFF]">Break Your Ceiling</h4>
               <div className="space-y-3">
-                {/* <a 
-                  href="#download" 
-                  className="block bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-4 py-2 rounded-lg font-semibold text-sm text-center transition-all duration-300"
-                >
-                  Free Blueprint
-                </a> */}
                 <button 
                   onClick={handleStrategyCallClick}
                   className="block bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-6 py-2 rounded-lg font-semibold text-sm text-center transition-all duration-300"
                 >
-                  Strategy Call
+                  Blueprint Call
                 </button>
               </div>
             </div>
@@ -708,7 +721,7 @@ const OpulionLandingPage = () => {
           <div className="border-t border-[#4A63FF]/20 mt-8 pt-8 text-center">
             <p className="text-gray-400 text-sm">
               © 2025 Opulion. All rights reserved. | 
-              <span className="text-[#4A63FF] ml-1">Ready to Scale Past the $100M Barrier?</span>
+              <span className="text-[#4A63FF] ml-1">Ready to Break the $75M Barrier?</span>
             </p>
           </div>
         </div>
@@ -717,10 +730,10 @@ const OpulionLandingPage = () => {
       {/* Floating CTA Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href="#download"
+          href="#newsletter"
           className="bg-gradient-to-r from-[#4A63FF] to-[#C33BFF] hover:from-[#C33BFF] hover:to-[#4A63FF] px-6 py-3 rounded-full font-bold shadow-lg shadow-[#4A63FF]/25 transition-all duration-300 transform hover:scale-110 flex items-center"
         >
-          Free Blueprint
+          Free Access
           <ArrowRight className="ml-2" size={18} />
         </a>
       </div>
