@@ -19,14 +19,12 @@
     "@mui/x-data-grid": "^7.0.0",
     "@mui/x-date-pickers": "^7.0.0",
     "@tailwindcss/vite": "^4.1.11",
-    
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.539.0",
     "react": "^19.1.1",
-   
     "react-dom": "^19.1.1",
     "react-hot-toast": "^2.4.1",
-   
+    "react-router-dom": "^7.9.1",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
